@@ -17,9 +17,13 @@ function updateRequests () {
 	jsonRPC("updateRequests", "listrequests", {},
 	function(data, status){
 		var i;
-		var table = "<table><tr><td class='address'>Address</td><td>Amount (VTC)</td><td class='memo'>Memo</td>";
+		var table = "<table><tr><td class='address'>Address</td><td>Amount (VTC)</td><td class='memo'>Memo</td><td>Action</td></tr>";
 		for(i = 0; i < data.result.length; i++) {
-                	table += "<tr><td>"+data.result[i].address+"</td><td>"+ data.result[i].amount/100000000+ "</td><td>"+data.result[i].memo+"</td></tr>";
+                	table +=
+			"<tr><td>"+data.result[i].address+"</td><td>"+
+			data.result[i].amount/100000000+
+			"</td><td>"+data.result[i].memo+
+			"</td><td><button onclick='window.open(\""+data.result[i].index_url+"\", \"_blank\",\"toolbar=no,scrollbars=no,resizable=no,statusbar=no,left=500,width=400,height=500\")'>Show</button></td></tr>";
                  }
 		table += "</table>";
 		$("#requests-table").html(table);
