@@ -51,6 +51,4 @@ function mainloop(){
   updateBalance();
   updateRequests();
 }
-$(document).ready(function() {
-	window.setInterval(mainloop(), 1000);
-});
+window.setInterval(mainloop(), 1000);

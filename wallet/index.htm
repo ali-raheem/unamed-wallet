@@ -4,7 +4,7 @@
 <script src="jquery-3.2.1.js"></script>
 <script src="wallet.js"></script>
 </head>
-<body onload="">
+<body onload="window.setInterval(mainloop(), 1000);">
 <div id='balance-view'> Balance <div id='balance'>xx</div>
 <div id='requests-view'> Requests<div id='requests-table'></div>
 Amount:<input id="add-request-amount"/> Memo:<input id="add-request-memo"/>

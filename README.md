@@ -9,12 +9,10 @@ Start like so
 Make sure to backup your wallets from ~/.electrum-vtc
 
 ```
-ELECTRUMCMD=electrum-vtc
-mkdir ./wallet
-$ELECTRUMCMD daemon
-$ELECTRUMCMD create
-$ELECTRUMCMD load_wallet
-$ELECTRUMCMD setconfig requests_dir ./wallet/req
-cd ./wallet
+mkdir wallet
+electrum-vtc create
+electrum-vtc daemon start
+electrum-vtc load_wallet
+cd wallet
 python -m SimpleHTTPServer
 ```
