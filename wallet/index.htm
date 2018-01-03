@@ -5,7 +5,7 @@
 <script src="wallet.js"></script>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body onload="window.setInterval(mainloop(), 1000);">
+<body>
 	<div class='window'>
 		<div class='left-pane'>
 		  <div id='balance-view' class='balance-widget'>
@@ -19,8 +19,8 @@
 			<div id='requests-table'>Loading..</div>
 			<input id="add-request-amount" value="Amount (VTC)" class="amount input-box" onclick='$("#add-request-amount").val("")'/>
 			<input id="add-request-memo" value="Memo"  class="memo input-box" onclick='$("#add-request-memo").val("")'/>
-		    <button id="add-request-button">Add Request</button>
-		    <button id="clear-requests-button">Clear Requests</button>
+		    <button id="add-request-button" class="button-okay">Add Request</button>
+		    <button id="clear-requests-button" class="button-check">Clear Requests</button>
 		  </div>
 		</div>
 		<div class='right-pane'>
