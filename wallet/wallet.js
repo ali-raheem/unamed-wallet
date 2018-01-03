@@ -12,6 +12,9 @@ function updateBalance () {
 			$("#balance").html(data.result.confirmed+ " VTC");
 	});
 }
+function popUpWindow(URL) {
+	window.open(URL, "Request","directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=no,left=500,width=400,height=500");
+}
 function updateRequests () {
 	console.log('listrequests');
 	jsonRPC("updateRequests", "listrequests", {},
@@ -23,7 +26,7 @@ function updateRequests () {
 			"<tr><td>"+data.result[i].address+"</td><td>"+
 			data.result[i].amount/100000000+
 			"</td><td>"+data.result[i].memo+
-			"</td><td><button onclick='window.open(\""+data.result[i].index_url+"\", \"_blank\",\"toolbar=no,scrollbars=no,resizable=no,statusbar=no,left=500,width=400,height=500\")'>Show</button></td></tr>";
+			"</td><td><button class='button-okay' onclick='window.open(\""+data.result[i].index_url+"\"'>Show</button></td></tr>";
                  }
 		table += "</table>";
 		$("#requests-table").html(table);
