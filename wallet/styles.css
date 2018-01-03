@@ -1,0 +1,57 @@
+.left-pane {
+	float: left;
+	width: 15%;
+	padding: 10px;
+	height: 200px;
+	background-color: #247239;
+	color: #FFFFFF;
+	height: 300px;
+}
+.balance-widget {
+	background-color: #b5e0c1;
+	padding: 10px;
+	font-weight: bold;
+}
+.middle-pane {
+	float: left;
+	width: 60%;
+	padding: 10px;
+	height: 200px;
+	background-color: #40b760;
+	color: #FFFFFF;
+	height: 300px;
+}
+.right-pane {
+	float: left;
+	width: 15%;
+	padding: 10px;
+	height: 200px;
+	background-color: #d4fcde;
+	color: #FFFFFF;
+	height: 300px;
+}
+.window:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.window {
+	height: 300px;
+}
+.amount {
+	width: 80%;
+}
+.memo {
+	width: 20%;
+}
+.input-box {
+	background-color: #d4fcde;
+	color: #247239;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: none;
+}
+table {
+	padding: 5px;
+}

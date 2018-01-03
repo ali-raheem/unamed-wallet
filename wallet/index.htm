@@ -3,15 +3,30 @@
 <head>
 <script src="jquery-3.2.1.js"></script>
 <script src="wallet.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body onload="window.setInterval(mainloop(), 1000);">
-<div id='balance-view'> Balance <div id='balance'>xx</div>
-<div id='requests-view'> Requests<div id='requests-table'></div>
-Amount:<input id="add-request-amount"/> Memo:<input id="add-request-memo"/>
-<button id="add-request-button">Add Request</button>
-<button id="clear-requests-button">Clear Requests</button>
-</div>
-<button id="update-button">Update</button>
+	<div class='window'>
+		<div class='left-pane'>
+		  <div id='balance-view' class='balance-widget'>
+		    Balance
+		    <div id='balance'>Loading....</div>
+		  </div>
+		</div>
+		<div class='middle-pane'>
+		  <div id='requests-view'>
+			Requests
+			<div id='requests-table'>Loading..</div>
+			<input id="add-request-amount" value="Amount (VTC)" class="amount input-box" onclick='$("#add-request-amount").val("")'/>
+			<input id="add-request-memo" value="Memo"  class="memo input-box" onclick='$("#add-request-memo").val("")'/>
+		    <button id="add-request-button">Add Request</button>
+		    <button id="clear-requests-button">Clear Requests</button>
+		  </div>
+		</div>
+		<div class='right-pane'>
+		  <button id="update-button">Update</button>
+		</div>
+	</div>
 </body>
 </html>
 
