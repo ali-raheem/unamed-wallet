@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.2.1.js"></script>
+<script>
+  function updateBalance () {
+  console.log('getbalance');
+  $.post("http://localhost:7777", "{\"id\": \"updateBalance\", \"method\": \"getbalance\", \"params\": []}", function(data, status){;$("#balance").html(data.result.confirmed+ " VTC");}, "json");
+  }
+  function updateRequests () {
+  console.log('listrequests');
+  $.post("http://localhost:7777", "{\"id\": \"listrequests\", \"method\": \"listrequests\", \"params\": []}", function(data, status){
+  var i;
+  var table = "";
+  for(i = 0; i < data.result.length; i++) {
+                 table += "address: "+data.result[i].address+" Amount: "+ data.result[i].amount/100000000+ " VTC</br>";
+                 }
+      $("#requests").html(table);
+                 }
+                 , "json");
+                 }
+                 
+                 $(document).ready(function() {$("button").click(function() {
+                 console.log('addreq');
+  $.post("http://localhost:7777", '{"id": "updateBalance", "method": "addrequest", "params": {"amount":"0.01"}}', updateRequests());
+                 });}
+                 );
+  function mainloop(){
+  updateBalance();
+  updateRequests();
+  //requestAnimationFrame(mainloop());
+  //setTimeout(mainloop(), 1000);
+  }
+</script>
+</head>
+<body onload='mainloop()'>
+  <div id='balance-view'> Balance <div id='balance'>xx</div> </div>
+  <div id='requests-view'> Requests<div id='requests'></div></div>
+  <button>Addrequest</button>
+</body>
+</html>
+
