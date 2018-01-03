@@ -9,22 +9,36 @@
 	<div class='window'>
 		<div class='left-pane'>
 		  <div id='balance-view' class='balance-widget'>
-		    Balance
+		    Balance <hr>
 		    <div id='balance'>Loading....</div>
 		  </div>
+		  <div id='nav-view' class='nav-widget'>
+	<button id="switch-pay-button" class="button-okay nav-button">Send</button>
+
+	<button id="switch-req-button" class="button-okay nav-button">Recieve</button>
+		  </div>			
 		</div>
 		<div class='middle-pane'>
 		  <div id='requests-view'>
-			Requests
+			Requests<hr>
 			<div id='requests-table'>Loading..</div>
 			<input id="add-request-amount" value="Amount (VTC)" class="amount input-box" onclick='$("#add-request-amount").val("")'/>
 			<input id="add-request-memo" value="Memo"  class="memo input-box" onclick='$("#add-request-memo").val("")'/>
 		    <button id="add-request-button" class="button-okay">Add Request</button>
 		    <button id="clear-requests-button" class="button-check">Clear Requests</button>
 		  </div>
+
+		  <div id='pay-view'>
+			Send<hr>
+			<input id="pay-amount" value="Amount (VTC)" class="amount input-box" onclick='$("#pay-amount").val("")'/>
+			<input id="pay-address" value="Address"  class="address input-box" onclick='$("#pay-address").val("")'/>
+		    <button id="pay-button" class="button-okay">Send money</button>
+		  </div>
 		</div>
 		<div class='right-pane'>
-		  <button id="update-button">Update</button>
+			<div class='address-wiget'>
+				Address book<hr>
+			</div>
 		</div>
 	</div>
 </body>

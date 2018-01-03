@@ -49,13 +49,28 @@ $(document).ready(function() {
 	})
 });
 $(document).ready(function() {
-	$("#update-button").click(function() {
-		console.log('update');
-		mainloop();
+	$("#switch-pay-button").click(function() {
+		$("#requests-view").slideUp();
+		$("#pay-view").slideDown();
 	})
 });
+$(document).ready(function() {
+	$("#switch-req-button").click(function() {
+		$("#requests-view").slideDown();
+		$("#pay-view").slideUp();
+	})
+});
+$(document).ready(function() {
+	$("#pay-button").click(function() {
+		var amount = $("#pay-amount").val();
+		var addr = $("#pay-address").val();
+		var params = {"amount": amount, "destination": addr};
+		console.log('payto');
+		jsonRPC("payto", "payto", params);
+	})
+;});
 function mainloop(){
   updateBalance();
   updateRequests();
 }
-window.setInterval(mainloop, 500);
+window.setInterval(mainloop, 2000);

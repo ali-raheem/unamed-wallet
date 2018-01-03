@@ -11,6 +11,7 @@
 	background-color: #b5e0c1;
 	padding: 10px;
 	font-weight: bold;
+	height: 100px;
 }
 .middle-pane {
 	float: left;
@@ -75,4 +76,16 @@ table {
     	text-decoration: none;
     	display: inline-block;
     	font-size: 16px;
+}
+
+.nav-widget {
+	padding: 10px;
+	margin: 10px;
+}
+.nav-button {
+	width: 130px;
+}
+
+.send-view {
+	
 }
