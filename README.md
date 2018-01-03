@@ -18,3 +18,9 @@ electrum-vtc load_wallet
 cd wallet
 python -m SimpleHTTPServer
 ```
+
+We intend to be compatible with nativefier and a desktop app can be built like so
+
+```
+nativefier "http://localhost:8000/"
+```
